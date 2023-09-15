@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        const dataOfMark = {
+            fullName: 'Mark Miller',
+            mass: 78,
+            height: 1.69,
+        };
+
+        const dataOfJohn = {
+            fullName: 'John Smith',
+            mass: 92,
+            height: 1.95,
+        };
+
+
+        dataOfJohn.calcBMI = dataOfMark.calcBMI = function() {
+            const calc = this.mass / this.height ** 2;
+
+            this.bmiValue = calc;
+            return calc;
+        };
+
+        dataOfMark.calcBMI();
+        dataOfJohn.calcBMI();
+
+
+        const data = [dataOfMark];
+        data[dataOfMark.bmiValue > dataOfJohn.bmiValue ? 'push' : 'unshift'](
+            dataOfJohn,
+        );
+        console.log(
+            `${data[0].fullName.split(' ')[0]}'s BMI (${data[0].bmiValue.toFixed(
+        1,
+    )}) is higher than ${
+        data[1].fullName.split(' ')[0]
+    }'s (${data[1].bmiValue.toFixed(1)})!`,
+        );
+    </script>
+</body>
+
+</html>

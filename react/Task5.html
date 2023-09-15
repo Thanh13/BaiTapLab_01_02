@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+        const checkWinner = (avgDolphins, avgKoalas) => {
+            if (avgDolphins >= 2 * avgKoalas) {
+                console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+            } else if (avgKoalas >= 2 * avgDolphins) {
+                console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+            } else {
+                console.log("No team wins!");
+            }
+        };
+
+        // Data 1
+        const dolphinsScore1 = [44, 23, 71];
+        const koalasScore1 = [65, 54, 49];
+
+        const avgDolphins1 = calcAverage(...dolphinsScore1);
+        const avgKoalas1 = calcAverage(...koalasScore1);
+
+        checkWinner(avgDolphins1, avgKoalas1);
+
+        // Data 2
+        const dolphinsScore2 = [85, 54, 41];
+        const koalasScore2 = [23, 34, 27];
+
+        const avgDolphins2 = calcAverage(...dolphinsScore2);
+        const avgKoalas2 = calcAverage(...koalasScore2);
+
+        checkWinner(avgDolphins2, avgKoalas2);
+    </script>
+</body>
+
+</html>

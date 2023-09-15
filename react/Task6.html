@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        const calcTip = (bill) => bill * (bill >= 50 && bill <= 300 ? 0.15 : 0.2);
+
+        console.log('With a bill value of 100, the tip is', calcTip(100));
+
+        const bills = [125, 555, 44];
+
+        const tips = bills.map(calcTip);
+        console.log(`Tips of bills ${bills.join(' ')} is ${tips.join(' ')}`);
+
+        const total = bills.map((item, index) => item + tips[index]);
+        console.log('Total values: ', total);
+    </script>
+</body>
+
+</html>
